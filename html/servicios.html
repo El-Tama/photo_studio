@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Fotográfico | Servicios</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Estudio Fotográfico</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portafolio.html">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../php/login.php" class="btn btn-outline-light me-2">Acceso Clientes</a>
+                    <a href="reservas.html" class="btn btn-primary">Reservar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header de página -->
+    <header class="py-5 bg-light">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">Nuestros Servicios</h1>
+            <p class="lead">Paquetes profesionales diseñados para cada ocasión especial</p>
+        </div>
+    </header>
+
+    <!-- Servicios principales -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Servicio 1: Bodas -->
+                <div class="col-lg-6 mb-5" id="bodas">
+                    <div class="card shadow-custom h-100">
+                        <img src="../img/bodas.svg" class="card-img-top" alt="Fotografía de bodas">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary-custom">💒 Fotografía de Bodas</h2>
+                            <p class="card-text">Paquetes completos para capturar cada momento especial de tu día perfecto. Desde la preparación hasta la fiesta, documentamos vuestra historia de amor.</p>
+                            
+                            <h5 class="mt-4 mb-3">✨ Incluye:</h5>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item">8-12 horas de cobertura completa</li>
+                                <li class="list-group-item">Fotógrafo principal + asistente</li>
+                                <li class="list-group-item">300+ fotos editadas profesionalmente</li>
+                                <li class="list-group-item">Álbum físico de lujo personalizado</li>
+                                <li class="list-group-item">Galería online privada</li>
+                                <li class="list-group-item">Sesión de compromiso incluida</li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 text-primary-custom mb-0">Desde $1,200</span>
+                                    <small class="text-muted d-block">Consulta paquetes personalizados</small>
+                                </div>
+                                <a href="reservas.html" class="btn btn-primary">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Servicio 2: Retratos -->
+                <div class="col-lg-6 mb-5" id="retratos">
+                    <div class="card shadow-custom h-100">
+                        <img src="../img/retratos.svg" class="card-img-top" alt="Retratos">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary-custom">📸 Sesiones de Retrato</h2>
+                            <p class="card-text">Individuales, familiares, maternidad o corporativos. Capturamos tu esencia y personalidad en cada imagen.</p>
+                            
+                            <h5 class="mt-4 mb-3">✨ Incluye:</h5>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item">1-2 horas de sesión personalizada</li>
+                                <li class="list-group-item">Múltiples cambios de vestuario</li>
+                                <li class="list-group-item">50+ fotos editadas</li>
+                                <li class="list-group-item">Opción de estudio o locación exterior</li>
+                                <li class="list-group-item">Asesoramiento de imagen incluido</li>
+                                <li class="list-group-item">Entrega digital en alta resolución</li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 text-primary-custom mb-0">Desde $250</span>
+                                    <small class="text-muted d-block">Precios especiales familias</small>
+                                </div>
+                                <a href="reservas.html" class="btn btn-primary">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Productos -->
+                <div class="col-lg-6 mb-5" id="productos">
+                    <div class="card shadow-custom h-100">
+                        <img src="../img/productos.svg" class="card-img-top" alt="Fotografía de productos">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary-custom">📦 Fotografía de Productos</h2>
+                            <p class="card-text">Imágenes comerciales que destacan tus productos y aumentan tus ventas. Perfectas para e-commerce y catálogos.</p>
+                            
+                            <h5 class="mt-4 mb-3">✨ Incluye:</h5>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item">Hasta 50 productos por sesión</li>
+                                <li class="list-group-item">Múltiples ángulos y perspectivas</li>
+                                <li class="list-group-item">Fondo blanco profesional</li>
+                                <li class="list-group-item">Retoque y optimización digital</li>
+                                <li class="list-group-item">Formatos listos para web/print</li>
+                                <li class="list-group-item">Entrega en 48-72 horas</li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 text-primary-custom mb-0">Desde $15</span>
+                                    <small class="text-muted d-block">Por producto / Descuentos por volumen</small>
+                                </div>
+                                <a href="reservas.html" class="btn btn-primary">Cotizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Eventos -->
+                <div class="col-lg-6 mb-5" id="eventos">
+                    <div class="card shadow-custom h-100">
+                        <img src="../img/eventos.svg" class="card-img-top" alt="Eventos corporativos" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzJjM2U1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkV2ZW50b3MgQ29ycG9yYXRpdm9zPC90ZXh0Pjwvc3ZnPg=='">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary-custom">🎉 Eventos Corporativos</h2>
+                            <p class="card-text">Conferencias, graduaciones, quinceañeras y eventos especiales. Documentamos cada momento importante.</p>
+                            
+                            <h5 class="mt-4 mb-3">✨ Incluye:</h5>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item">Cobertura completa del evento</li>
+                                <li class="list-group-item">Fotografía candid y posada</li>
+                                <li class="list-group-item">Edición profesional express</li>
+                                <li class="list-group-item">Galería online para invitados</li>
+                                <li class="list-group-item">Entrega en 5-7 días</li>
+                                <li class="list-group-item">Opción de video destacado</li>
+                            </ul>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h4 text-primary-custom mb-0">Desde $400</span>
+                                    <small class="text-muted d-block">Por evento / 4 horas mínimo</small>
+                                </div>
+                                <a href="reservas.html" class="btn btn-primary">Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios adicionales -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Servicios Adicionales</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <span style="font-size: 3rem;">🎥</span>
+                            </div>
+                            <h5 class="card-title">Video Profesional</h5>
+                            <p class="card-text">Complementa tus fotografías con videos cinematográficos de alta calidad.</p>
+                            <a href="contacto.html" class="btn btn-outline-primary">Más info</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <span style="font-size: 3rem;">🖼️</span>
+                            </div>
+                            <h5 class="card-title">Impresiones & Álbumes</h5>
+                            <p class="card-text">Productos físicos de la más alta calidad para preservar tus recuerdos.</p>
+                            <a href="contacto.html" class="btn btn-outline-primary">Ver catálogo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <span style="font-size: 3rem;">✨</span>
+                            </div>
+                            <h5 class="card-title">Retoque Avanzado</h5>
+                            <p class="card-text">Servicios especializados de edición y restauración fotográfica.</p>
+                            <a href="contacto.html" class="btn btn-outline-primary">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de trabajo -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestro Proceso</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="mb-3">
+                        <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="h4 mb-0">1</span>
+                        </div>
+                    </div>
+                    <h5>Consulta Inicial</h5>
+                    <p class="text-muted">Discutimos tus necesidades y visión para el proyecto.</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="mb-3">
+                        <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="h4 mb-0">2</span>
+                        </div>
+                    </div>
+                    <h5>Planificación</h5>
+                    <p class="text-muted">Creamos un plan detallado y cronograma personalizado.</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="mb-3">
+                        <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="h4 mb-0">3</span>
+                        </div>
+                    </div>
+                    <h5>Sesión Fotográfica</h5>
+                    <p class="text-muted">Capturamos momentos únicos con equipos profesionales.</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <div class="mb-3">
+                        <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="h4 mb-0">4</span>
+                        </div>
+                    </div>
+                    <h5>Entrega Final</h5>
+                    <p class="text-muted">Recibes tus fotografías editadas en alta calidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Preguntas Frecuentes</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    ¿Qué incluye el servicio de edición?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Incluye corrección de color, ajuste de exposición, retoque básico de piel, eliminación de elementos no deseados y optimización para diferentes formatos de entrega.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    ¿Puedo obtener todas las fotos sin editar?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sí, ofrecemos paquetes que incluyen todas las fotos RAW sin editar, además de la selección editada profesionalmente.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    ¿Cuánto tiempo toma la entrega?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Los tiempos varían según el servicio: retratos 5-7 días, bodas 2-3 semanas, productos 48-72 horas, eventos 5-7 días.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">¿Listo para comenzar tu proyecto?</h2>
+            <p class="lead mb-4">Contáctanos para una consulta gratuita y presupuesto personalizado</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="reservas.html" class="btn btn-primary btn-lg">Reservar ahora</a>
+                <a href="contacto.html" class="btn btn-outline-secondary btn-lg">Obtener presupuesto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Estudio Fotográfico</h5>
+                    <p>Capturando momentos, creando recuerdos.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="portafolio.html" class="text-white">Portafolio</a></li>
+                        <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>info@estudiofotografico.com<br>Tel: 123-456-7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS personalizado -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

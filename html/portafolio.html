@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Fotográfico | Portafolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Estudio Fotográfico</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portafolio.html">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../php/login.php" class="btn btn-outline-light me-2">Acceso Clientes</a>
+                    <a href="reservas.html" class="btn btn-primary">Reservar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header de página -->
+    <header class="py-5 bg-light">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">Nuestro Portafolio</h1>
+            <p class="lead">Una muestra de nuestro trabajo más destacado en diferentes especialidades</p>
+        </div>
+    </header>
+
+    <!-- Contenido del portafolio -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Filtros -->
+            <div class="text-center mb-5">
+                <div class="btn-group" role="group" aria-label="Filtros de portafolio">
+                    <button type="button" class="btn btn-outline-primary active" data-filter="all">Todos</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="bodas">Bodas</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="retratos">Retratos</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="productos">Productos</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="eventos">Eventos</button>
+                </div>
+            </div>
+            
+            <!-- Galería -->
+            <div class="row gallery" id="portfolioGallery">
+                <!-- Bodas -->
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="bodas">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/boda1.jpg" class="card-img-top" alt="Fotografía de boda elegante" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJvZGEgRWxlZ2FudGU8L3RleHQ+PC9zdmc+'">
+                        <div class="card-body">
+                            <h5 class="card-title">Boda Elegante</h5>
+                            <p class="card-text">Ceremonia íntima en jardín botánico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="bodas">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/boda2.jpg" class="card-img-top" alt="Boda en la playa" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJvZGEgZW4gbGEgUGxheWE8L3RleHQ+PC9zdmc+'" >
+                        <div class="card-body">
+                            <h5 class="card-title">Boda en la Playa</h5>
+                            <p class="card-text">Atardecer romántico junto al mar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="bodas">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/boda3.jpg" class="card-img-top" alt="Boda clásica" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJvZGEgQ2zDoXNpY2E8L3RleHQ+PC9zdmc+'" >
+                        <div class="card-body">
+                            <h5 class="card-title">Boda Clásica</h5>
+                            <p class="card-text">Tradición y elegancia en cada detalle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retratos -->
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="retratos">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/retrato1.jpg" class="card-img-top" alt="Retrato profesional" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlJldHJhdG8gUHJvZmVzaW9uYWw8L3RleHQ+PC9zdmc+'" >
+                        <div class="card-body">
+                            <h5 class="card-title">Retrato Profesional</h5>
+                            <p class="card-text">Ejecutivo corporativo con iluminación dramática</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="retratos">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/retrato2.jpg" class="card-img-top" alt="Retrato familiar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlJldHJhdG8gRmFtaWxpYXI8L3RleHQ+PC9zdmc+'" >
+                        <div class="card-body">
+                            <h5 class="card-title">Retrato Familiar</h5>
+                            <p class="card-text">Sesión natural en exteriores</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="retratos">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/retrato3.jpg" class="card-img-top" alt="Retrato artístico" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlJldHJhdG8gQXJ0w61zdGljbzwvdGV4dD48L3N2Zz4='" >
+                        <div class="card-body">
+                            <h5 class="card-title">Retrato Artístico</h5>
+                            <p class="card-text">Composición creativa con luz natural</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Productos -->
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="productos">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/producto1.jpg" class="card-img-top" alt="Fotografía de producto cosmético" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByb2R1Y3RvcyBDb3Ntw6l0aWNvczwvdGV4dD48L3N2Zz4='" >
+                        <div class="card-body">
+                            <h5 class="card-title">Productos Cosméticos</h5>
+                            <p class="card-text">Fotografía comercial de alta calidad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="productos">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/producto2.jpg" class="card-img-top" alt="Fotografía de joyas" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkpveWVyw61hPC90ZXh0Pjwvc3ZnPg=='" >
+                        <div class="card-body">
+                            <h5 class="card-title">Joyería</h5>
+                            <p class="card-text">Detalles precisos con macro fotografía</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="productos">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/producto3.jpg" class="card-img-top" alt="Fotografía de gastronomía" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkdhc3Ryb25vbcOtYTwvdGV4dD48L3N2Zz4='" >
+                        <div class="card-body">
+                            <h5 class="card-title">Gastronomía</h5>
+                            <p class="card-text">Food styling profesional para restaurantes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eventos -->
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="eventos">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/evento1.jpg" class="card-img-top" alt="Evento corporativo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkV2ZW50byBDb3Jwb3JhdGl2bzwvdGV4dD48L3N2Zz4='" >
+                        <div class="card-body">
+                            <h5 class="card-title">Evento Corporativo</h5>
+                            <p class="card-text">Conferencia empresarial anual</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="eventos">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/evento2.jpg" class="card-img-top" alt="Graduación" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkdyYWR1YWNpw7NuPC90ZXh0Pjwvc3ZnPg=='" >
+                        <div class="card-body">
+                            <h5 class="card-title">Graduación</h5>
+                            <p class="card-text">Ceremonia universitaria memorable</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 gallery-item" data-category="eventos">
+                    <div class="card img-hover-effect">
+                        <img src="../img/gallery/evento3.jpg" class="card-img-top" alt="Quinceañera" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOWZhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZjNzU3ZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkZpZXN0YSBkZSAxNTwvdGV4dD48L3N2Zz4='" >
+                        <div class="card-body">
+                            <h5 class="card-title">Fiesta de 15</h5>
+                            <p class="card-text">Celebración elegante y colorida</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="card-text">"Increíble trabajo en nuestra boda. Capturaron cada momento perfectamente."</p>
+                            <footer class="blockquote-footer">
+                                <small>María y Carlos</small>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="card-text">"Profesionalismo excepcional en nuestra sesión familiar. ¡Recomendados!"</p>
+                            <footer class="blockquote-footer">
+                                <small>Familia García</small>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <span class="text-warning">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="card-text">"Las fotos de productos superaron nuestras expectativas. Calidad excepcional."</p>
+                            <footer class="blockquote-footer">
+                                <small>Boutique Elena</small>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">¿Te gusta nuestro trabajo?</h2>
+            <p class="lead mb-4">Contáctanos para crear algo increíble juntos</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="reservas.html" class="btn btn-primary btn-lg">Reservar sesión</a>
+                <a href="contacto.html" class="btn btn-outline-secondary btn-lg">Obtener presupuesto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Estudio Fotográfico</h5>
+                    <p>Capturando momentos, creando recuerdos.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="portafolio.html" class="text-white">Portafolio</a></li>
+                        <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>info@estudiofotografico.com<br>Tel: 123-456-7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS personalizado -->
+    <script src="../js/main.js"></script>
+    
+    <!-- JavaScript para filtros de galería -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Actualizar botones activos
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filtrar elementos
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

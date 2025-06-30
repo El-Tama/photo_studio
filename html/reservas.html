@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Fotográfico | Reservas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Estudio Fotográfico</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portafolio.html">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../php/login.php" class="btn btn-outline-light me-2">Acceso Clientes</a>
+                    <a href="reservas.html" class="btn btn-primary active">Reservar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header de página -->
+    <header class="py-5 bg-light">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">Reserva tu Sesión</h1>
+            <p class="lead">Completa el formulario y te contactaremos para confirmar los detalles</p>
+        </div>
+    </header>
+
+    <!-- Contenido de reservas -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Formulario de reserva -->
+                <div class="col-lg-8 mb-4">
+                    <div class="card shadow-custom">
+                        <div class="card-body">
+                            <h2 class="card-title mb-4">📅 Información de la reserva</h2>
+                            <form id="reservaForm" action="../php/procesar_reserva.php" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="nombre" class="form-label">Nombre completo *</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa tu nombre completo.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa un email válido.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="telefono" class="form-label">Teléfono *</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa tu número de teléfono.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="servicio" class="form-label">Tipo de servicio *</label>
+                                        <select class="form-select" id="servicio" name="servicio" required>
+                                            <option value="">Selecciona un servicio...</option>
+                                            <option value="bodas">💒 Fotografía de Bodas</option>
+                                            <option value="retratos">📸 Sesión de Retratos</option>
+                                            <option value="productos">📦 Fotografía de Productos</option>
+                                            <option value="eventos">🎉 Eventos Corporativos</option>
+                                            <option value="otros">✨ Otros servicios</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor selecciona un tipo de servicio.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fecha" class="form-label">Fecha deseada *</label>
+                                        <input type="date" class="form-control" id="fecha" name="fecha" required>
+                                        <div class="invalid-feedback">
+                                            Por favor selecciona una fecha.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="hora" class="form-label">Hora preferida</label>
+                                        <select class="form-select" id="hora" name="hora">
+                                            <option value="">Selecciona una hora...</option>
+                                            <option value="09:00">9:00 AM</option>
+                                            <option value="10:00">10:00 AM</option>
+                                            <option value="11:00">11:00 AM</option>
+                                            <option value="12:00">12:00 PM</option>
+                                            <option value="13:00">1:00 PM</option>
+                                            <option value="14:00">2:00 PM</option>
+                                            <option value="15:00">3:00 PM</option>
+                                            <option value="16:00">4:00 PM</option>
+                                            <option value="17:00">5:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="ubicacion" class="form-label">Ubicación preferida</label>
+                                    <select class="form-select" id="ubicacion" name="ubicacion">
+                                        <option value="">Selecciona ubicación...</option>
+                                        <option value="estudio">🏢 En nuestro estudio</option>
+                                        <option value="exterior">🌳 Sesión exterior</option>
+                                        <option value="domicilio">🏠 A domicilio</option>
+                                        <option value="evento">📍 Lugar del evento</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="participantes" class="form-label">Número de participantes</label>
+                                    <select class="form-select" id="participantes" name="participantes">
+                                        <option value="">Selecciona...</option>
+                                        <option value="1">1 persona</option>
+                                        <option value="2">2 personas</option>
+                                        <option value="3-5">3-5 personas</option>
+                                        <option value="6-10">6-10 personas</option>
+                                        <option value="10+">Más de 10 personas</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="presupuesto" class="form-label">Presupuesto aproximado</label>
+                                    <select class="form-select" id="presupuesto" name="presupuesto">
+                                        <option value="">Selecciona rango...</option>
+                                        <option value="200-500">$200 - $500</option>
+                                        <option value="500-1000">$500 - $1,000</option>
+                                        <option value="1000-2000">$1,000 - $2,000</option>
+                                        <option value="2000+">Más de $2,000</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="mensaje" class="form-label">Detalles adicionales</label>
+                                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto, estilo preferido, ideas especiales, etc."></textarea>
+                                </div>
+                                
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="terminos" name="terminos" required>
+                                    <label class="form-check-label" for="terminos">
+                                        Acepto los <a href="#" data-bs-toggle="modal" data-bs-target="#terminosModal">términos y condiciones</a> *
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Debes aceptar los términos y condiciones.
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        Quiero recibir consejos fotográficos y ofertas especiales por email
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    📋 Enviar solicitud de reserva
+                                </button>
+                                
+                                <div class="mt-3 text-center">
+                                    <small class="text-muted">
+                                        Te contactaremos en un plazo máximo de 24 horas para confirmar tu reserva
+                                    </small>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Información lateral -->
+                <div class="col-lg-4">
+                    <!-- Disponibilidad -->
+                    <div class="card shadow-custom mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">📅 Disponibilidad</h3>
+                            <div class="mb-3">
+                                <h6 class="text-primary-custom">Horarios de atención:</h6>
+                                <p class="card-text mb-2">
+                                    <strong>Lunes - Viernes:</strong> 9:00 AM - 6:00 PM<br>
+                                    <strong>Sábados:</strong> 10:00 AM - 4:00 PM<br>
+                                    <strong>Domingos:</strong> Solo eventos especiales
+                                </p>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-primary-custom">Fechas con alta demanda:</h6>
+                                <div class="alert alert-warning">
+                                    <small>
+                                        📍 <strong>Mayo - Septiembre:</strong> Temporada alta de bodas<br>
+                                        📍 <strong>Diciembre:</strong> Sesiones navideñas<br>
+                                        📍 <strong>Fines de semana:</strong> Mayor demanda
+                                    </small>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <a href="contacto.html" class="btn btn-outline-primary btn-sm">
+                                    📞 Consultar disponibilidad
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proceso -->
+                    <div class="card shadow-custom mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">🎯 Proceso de reserva</h3>
+                            <div class="steps">
+                                <div class="d-flex mb-3">
+                                    <div class="flex-shrink-0">
+                                        <span class="badge bg-primary rounded-pill">1</span>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6 class="mb-1">Envía tu solicitud</h6>
+                                        <small class="text-muted">Completa el formulario con tus preferencias</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <div class="flex-shrink-0">
+                                        <span class="badge bg-primary rounded-pill">2</span>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6 class="mb-1">Confirmación</h6>
+                                        <small class="text-muted">Te contactamos en 24 horas para confirmar</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <div class="flex-shrink-0">
+                                        <span class="badge bg-primary rounded-pill">3</span>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6 class="mb-1">Preparación</h6>
+                                        <small class="text-muted">Planificamos todos los detalles juntos</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <span class="badge bg-primary rounded-pill">4</span>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h6 class="mb-1">¡Sesión!</h6>
+                                        <small class="text-muted">Capturamos momentos increíbles</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Información importante -->
+                    <div class="card shadow-custom">
+                        <div class="card-body">
+                            <h3 class="card-title">ℹ️ Información importante</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <small>✅ <strong>Anticipo:</strong> 30% para confirmar la reserva</small>
+                                </li>
+                                <li class="mb-2">
+                                    <small>✅ <strong>Cancelación:</strong> 48 horas de anticipación</small>
+                                </li>
+                                <li class="mb-2">
+                                    <small>✅ <strong>Reprogramación:</strong> Sin costo adicional</small>
+                                </li>
+                                <li class="mb-2">
+                                    <small>✅ <strong>Entrega:</strong> 5-14 días según el servicio</small>
+                                </li>
+                            </ul>
+                            
+                            <div class="text-center mt-3">
+                                <a href="servicios.html" class="btn btn-outline-primary btn-sm">
+                                    📄 Ver todos los servicios
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de términos y condiciones -->
+    <div class="modal fade" id="terminosModal" tabindex="-1" aria-labelledby="terminosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="terminosModalLabel">Términos y Condiciones</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Política de reservas</h6>
+                    <p>Las reservas se confirman únicamente con el pago del anticipo del 30% del valor total del servicio.</p>
+                    
+                    <h6>2. Cancelaciones y reprogramaciones</h6>
+                    <p>Las cancelaciones deben realizarse con un mínimo de 48 horas de anticipación. Las reprogramaciones no tienen costo adicional.</p>
+                    
+                    <h6>3. Política de entrega</h6>
+                    <p>Los tiempos de entrega varían según el tipo de servicio contratado. Las fotografías se entregan en formato digital de alta resolución.</p>
+                    
+                    <h6>4. Derechos de autor</h6>
+                    <p>El estudio se reserva el derecho de usar las fotografías con fines promocionales, salvo solicitud expresa en contrario del cliente.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Estudio Fotográfico</h5>
+                    <p>Capturando momentos, creando recuerdos.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="portafolio.html" class="text-white">Portafolio</a></li>
+                        <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>info@estudiofotografico.com<br>Tel: 123-456-7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS personalizado -->
+    <script src="../js/main.js"></script>
+    
+    <!-- JavaScript específico para reservas -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Establecer fecha mínima como hoy
+            const fechaInput = document.getElementById('fecha');
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            fechaInput.min = tomorrow.toISOString().split('T')[0];
+            
+            // Validación del formulario
+            const form = document.getElementById('reservaForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (form.checkValidity()) {
+                    // Simular envío exitoso
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    setButtonLoading(submitBtn, true);
+                    
+                    setTimeout(() => {
+                        setButtonLoading(submitBtn, false);
+                        showToast('¡Solicitud enviada exitosamente! Te contactaremos pronto.', 'success');
+                        form.reset();
+                    }, 2000);
+                }
+                
+                form.classList.add('was-validated');
+            });
+        });
+    </script>
+</body>
+</html>

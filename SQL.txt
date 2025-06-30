@@ -1,0 +1,140 @@
+-- Crear base de datos
+CREATE DATABASE IF NOT EXISTS photo_studio;
+USE photo_studio;
+
+-- Tabla de usuarios
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    telefono VARCHAR(20),
+    rol ENUM('cliente', 'admin') DEFAULT 'cliente',
+    activo BOOLEAN DEFAULT TRUE,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ultimo_acceso TIMESTAMP NULL
+);
+
+-- Tabla de paquetes fotográficos
+CREATE TABLE paquetes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(10,2) NOT NULL,
+    duracion DECIMAL(3,1) DEFAULT 2.0,
+    fotos_incluidas INT DEFAULT 50,
+    retoque_incluido BOOLEAN DEFAULT FALSE,
+    activo BOOLEAN DEFAULT TRUE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla de disponibilidad
+CREATE TABLE disponibilidad (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    fecha DATE NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fin TIME NOT NULL,
+    disponible BOOLEAN DEFAULT TRUE,
+    notas VARCHAR(255)
+);
+
+-- Tabla de reservas
+CREATE TABLE reservas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
+    paquete_id INT NOT NULL,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    nombre_evento VARCHAR(200) NOT NULL,
+    numero_personas INT NOT NULL,
+    ubicacion VARCHAR(255),
+    precio_total DECIMAL(10,2),
+    comentarios TEXT,
+    estado ENUM('pendiente', 'confirmada', 'completada', 'cancelada') DEFAULT 'pendiente',
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (paquete_id) REFERENCES paquetes(id) ON DELETE CASCADE
+);
+
+-- Tabla de galerías
+CREATE TABLE galerias (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    categoria ENUM('bodas', 'retratos', 'productos', 'eventos', 'familia') DEFAULT 'eventos',
+    cliente_id INT NULL,
+    publica BOOLEAN DEFAULT TRUE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (cliente_id) REFERENCES usuarios(id) ON DELETE SET NULL
+);
+
+-- Tabla de fotos
+CREATE TABLE fotos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    galeria_id INT NOT NULL,
+    titulo VARCHAR(100),
+    descripcion TEXT,
+    ruta_archivo VARCHAR(500) NOT NULL,
+    orden INT DEFAULT 0,
+    fecha_subida TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (galeria_id) REFERENCES galerias(id) ON DELETE CASCADE
+);
+
+-- Tabla de favoritos
+CREATE TABLE favoritos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
+    foto_id INT NOT NULL,
+    fecha_agregado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (foto_id) REFERENCES fotos(id) ON DELETE CASCADE,
+    UNIQUE KEY unique_favorito (usuario_id, foto_id)
+);
+
+-- Tabla de contactos
+CREATE TABLE contactos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefono VARCHAR(20),
+    asunto VARCHAR(200) NOT NULL,
+    mensaje TEXT NOT NULL,
+    estado ENUM('nuevo', 'leido', 'respondido') DEFAULT 'nuevo',
+    fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabla de cotizaciones
+CREATE TABLE cotizaciones (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    contacto_id INT NOT NULL,
+    tipo_evento VARCHAR(100),
+    fecha_evento DATE,
+    numero_personas INT,
+    ubicacion VARCHAR(255),
+    duracion DECIMAL(3,1),
+    paquetes_interes TEXT,
+    presupuesto VARCHAR(50),
+    comentarios TEXT,
+    FOREIGN KEY (contacto_id) REFERENCES contactos(id) ON DELETE CASCADE
+);
+
+-- Tabla de respuestas de cotización
+CREATE TABLE respuestas_cotizacion (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    contacto_id INT NOT NULL,
+    respuesta TEXT NOT NULL,
+    precio_propuesto DECIMAL(10,2),
+    fecha_respuesta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (contacto_id) REFERENCES contactos(id) ON DELETE CASCADE
+);
+
+-- Tabla para reset de contraseñas
+CREATE TABLE password_resets (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    token VARCHAR(64) NOT NULL,
+    expiry TIMESTAMP NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    UNIQUE KEY unique_user_reset (user_id)
+);
+

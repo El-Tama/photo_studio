@@ -1,0 +1,350 @@
+/* Login Styles with Bootstrap Integration */
+
+/* Variables personalizadas que se integran con Bootstrap */
+:root {
+    --login-bg-primary: #2c3e50;
+    --login-bg-secondary: #1a252f;
+    --login-gradient: linear-gradient(135deg, var(--login-bg-primary) 0%, var(--login-bg-secondary) 100%);
+    --login-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    --login-shadow-hover: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor principal de login */
+.login-container {
+    min-height: 100vh;
+    background: var(--login-gradient);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Patrón de fondo sutil */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+    pointer-events: none;
+}
+
+/* Icono flotante decorativo */
+.login-container::after {
+    content: '📸';
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 4rem;
+    opacity: 0.08;
+    animation: float 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Caja principal de login */
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 20px !important;
+    box-shadow: var(--login-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease;
+    animation: slideInUp 0.6s ease-out;
+    position: relative;
+    z-index: 1;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.login-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--login-shadow-hover);
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Título con gradiente */
+.login-title {
+    background: var(--login-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800 !important;
+    text-shadow: none;
+}
+
+
+/* Mejoras para los botones de pestañas */
+.btn-group .btn-outline-primary {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-group .btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    transform: translateY(-1px);
+}
+
+.btn-group .btn-check:checked + .btn-outline-primary {
+    background: var(--login-gradient);
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+}
+
+/* Estilos mejorados para inputs */
+.form-control {
+    border-radius: 12px !important;
+    border: 2px solid #e1e5e9;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.15);
+    transform: translateY(-1px);
+}
+
+.form-control-lg {
+    padding: 1rem 1.2rem;
+    font-size: 1.1rem;
+}
+
+/* Validación visual con Bootstrap */
+.form-control.is-valid {
+    border-color: #28a745;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.8-.77-.76-.77-.76.77-.76-.77-.76.77.76.77.76-.77.76.77.76-.77zm1.4-2.69.8-.77-.76-.77-.76.77-.76-.77-.76.77.76.77.76-.77.76.77.76-.77zm1.4-2.69.8-.77-.76-.77-.76.77-.76-.77-.76.77.76.77.76-.77.76.77.76-.77z'/%3e%3c/svg%3e");
+    padding-right: 3rem;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6.4.4.4-.4'/%3e%3cpath d='M6 8v.01'/%3e%3c/svg%3e");
+    padding-right: 3rem;
+}
+
+/* Botones principales */
+.submit-btn {
+    background: var(--login-gradient) !important;
+    border: none !important;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.3);
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Enlaces de olvido de contraseña */
+.forgot-password {
+    color: var(--bs-primary) !important;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-decoration: none !important;
+}
+
+.forgot-password:hover {
+    background: rgba(52, 152, 219, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Alertas personalizadas */
+.alert {
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+    animation: shake 0.5s ease-in-out;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    border-left: 4px solid #28a745;
+    animation: slideInDown 0.4s ease-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Spinner personalizado */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Botón de volver */
+.btn-outline-secondary {
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+/* Modal personalizado */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: var(--login-shadow);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px 15px 0 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .login-container::after {
+        font-size: 3rem;
+        top: 5%;
+        right: 5%;
+    }
+    
+    .login-box {
+        border-radius: 15px !important;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .login-title {
+        font-size: 2rem !important;
+    }
+    
+    .btn-group .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container::after {
+        display: none;
+    }
+    
+    .login-box {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .card-body {
+        padding: 2rem !important;
+    }
+    
+    .login-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .form-control-lg {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Dark mode support *//*
+@media (prefers-color-scheme: dark) {
+    .login-box {
+        background: rgba(30, 30, 30, 0.95);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    .form-control {
+        background-color: #2a2a2a;
+        border-color: #444;
+        color: #fff;
+    }
+    
+    .form-control:focus {
+        background-color: #333;
+        border-color: var(--bs-primary);
+        color: #fff;
+    }
+    
+    .modal-content {
+        background-color: #2a2a2a;
+        color: #fff;
+    }
+}
+*/
+/* Animaciones adicionales para mejorar la UX */
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

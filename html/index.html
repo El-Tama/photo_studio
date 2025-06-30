@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Fotográfico | Inicio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Estudio Fotográfico</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portafolio.html">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../php/login.php" class="btn btn-outline-light me-2">Acceso Clientes</a>
+                    <a href="reservas.html" class="btn btn-primary">Reservar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner principal -->
+    <header class="hero-banner">
+        <div class="container text-center py-5">
+            <h1 class="display-4">Capturando Momentos Inolvidables</h1>
+            <p class="lead">Profesionales dedicados a hacer que tus recuerdos duren para siempre</p>
+            <a href="reservas.html" class="btn btn-primary btn-lg mt-3">Reserva tu sesión</a>   
+        </div>
+    </header>
+
+    <!-- Resumen de servicios -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestros Servicios</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="../img/bodas.svg" class="card-img-top" alt="Fotografía de bodas">
+                        <div class="card-body">
+                            <h5 class="card-title">Bodas</h5>
+                            <p class="card-text">Capturamos cada momento especial de tu día perfecto con elegancia y estilo.</p>
+                            <a href="servicios.html#bodas" class="btn btn-outline-primary">Más información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="../img/retratos.svg" class="card-img-top" alt="Retratos">
+                        <div class="card-body">
+                            <h5 class="card-title">Retratos</h5>
+                            <p class="card-text">Sesiones personalizadas que destacan tu personalidad y belleza única.</p>
+                            <a href="servicios.html#retratos" class="btn btn-outline-primary">Más información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="../img/productos.svg" class="card-img-top" alt="Fotografía de productos">
+                        <div class="card-body">
+                            <h5 class="card-title">Productos</h5>
+                            <p class="card-text">Imágenes profesionales que muestran tus productos en su mejor luz.</p>
+                            <a href="servicios.html#productos" class="btn btn-outline-primary">Más información</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Llamadas a la acción -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">¿Listo para crear recuerdos duraderos?</h2>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="reservas.html" class="btn btn-primary btn-lg">Reservar ahora</a>
+                <a href="contacto.html" class="btn btn-outline-secondary btn-lg">Contactarnos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Estudio Fotográfico</h5>
+                    <p>Capturando momentos, creando recuerdos.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="portafolio.html" class="text-white">Portafolio</a></li>
+                        <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>info@estudiofotografico.com<br>Tel: 123-456-7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS personalizado -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
