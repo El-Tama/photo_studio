@@ -10,6 +10,8 @@ function initializeApp() {
     initFormValidation();
     initSmoothScrolling();
     initBackToTop();
+    initPortfolioFilters();
+    addMobileDebugInfo();
 }
 
 // ===== NAVEGACIÓN =====
@@ -210,6 +212,83 @@ function initBackToTop() {
     });
 }
 
+// ===== FILTROS DE PORTAFOLIO =====
+function initPortfolioFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (filterButtons.length === 0 || galleryItems.length === 0) return;
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Actualizar botones activos
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filtrar elementos con animaciones mejoradas
+            galleryItems.forEach((item, index) => {
+                const category = item.getAttribute('data-category');
+                
+                if (filter === 'all' || category === filter) {
+                    // Mostrar elemento
+                    item.style.display = 'block';
+                    
+                    // Animación escalonada para entrada
+                    setTimeout(() => {
+                        item.classList.add('show');
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, index * 100); // Delay escalonado
+                } else {
+                    // Ocultar elemento
+                    item.classList.remove('show');
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // Scroll suave a la galería en móviles
+            if (window.innerWidth <= 768) {
+                const gallery = document.getElementById('portfolioGallery');
+                if (gallery) {
+                    gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+    
+    // Inicializar con todos los elementos visibles
+    galleryItems.forEach((item, index) => {
+        item.style.opacity = '1';
+        item.style.transform = 'scale(1)';
+        item.style.transition = 'all 0.4s ease';
+        
+        // Animación inicial escalonada
+        setTimeout(() => {
+            item.classList.add('show');
+        }, index * 50);
+    });
+    
+    // Mejorar accesibilidad - navegación con teclado
+    filterButtons.forEach((button, index) => {
+        button.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' && index > 0) {
+                filterButtons[index - 1].focus();
+                e.preventDefault();
+            } else if (e.key === 'ArrowRight' && index < filterButtons.length - 1) {
+                filterButtons[index + 1].focus();
+                e.preventDefault();
+            }
+        });
+    });
+}
+
 // ===== UTILIDADES =====
 
 // Loading state para botones
@@ -358,3 +437,61 @@ document.head.appendChild(style);
 
 // Inicializar preload de imágenes
 preloadImages();
+
+// ===== UTILIDADES PARA DEBUGGING EN MÓVILES =====
+function addMobileDebugInfo() {
+    if (window.innerWidth <= 768) {
+        console.log('📱 Modo móvil detectado');
+        console.log('Ancho de pantalla:', window.innerWidth);
+        console.log('Alto de pantalla:', window.innerHeight);
+        console.log('Orientación:', window.innerHeight > window.innerWidth ? 'Portrait' : 'Landscape');
+        
+        // Mostrar información de viewport en desarrollo
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            const debugInfo = document.createElement('div');
+            debugInfo.style.cssText = `
+                position: fixed;
+                top: 0;
+                right: 0;
+                background: rgba(0,0,0,0.8);
+                color: white;
+                padding: 5px;
+                font-size: 10px;
+                z-index: 9999;
+                font-family: monospace;
+            `;
+            debugInfo.innerHTML = `${window.innerWidth}x${window.innerHeight}`;
+            document.body.appendChild(debugInfo);
+        }
+    }
+}
+
+// ===== MANEJO DE REDIMENSIONAMIENTO =====
+function handleResize() {
+    // Reajustar filtros en cambio de orientación
+    const filters = document.querySelector('.portfolio-filters');
+    if (filters && window.innerWidth <= 768) {
+        filters.scrollLeft = 0; // Reset scroll horizontal
+    }
+}
+
+// Escuchar cambios de orientación y redimensionamiento
+window.addEventListener('resize', debounce(handleResize, 250));
+window.addEventListener('orientationchange', function() {
+    setTimeout(handleResize, 500); // Delay para esperar el cambio completo
+});
+
+// Función debounce para optimizar performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// ===== CONTINUAR CON FUNCIONES EXISTENTES =====
